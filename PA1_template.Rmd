@@ -51,11 +51,12 @@ daily_amd1 <- amd1 %>% group_by(date) %>% summarise(total_steps = sum(steps)) %>
 
 **Make a histogram of the total number of steps taken per day**
 
-```{r, echo = TRUE}
+```{r, fig.path='figures/hist_total-steps-day-', dev='png', echo = TRUE}
 
 hist(daily_amd1$total_steps, col = "lightblue", main = "Histogram of total steps taken per day", xlab = "Sum of Steps")
 
 ```
+
 
 **Calculate and report the mean and median of the total number of steps taken per day**
 
@@ -72,7 +73,7 @@ Median of the total number of steps: 10765
 
 **Make a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)**
 
-```{r, echo = TRUE}
+```{r, fig.path='figures/line_avg-steps-interval-', dev='png', echo = TRUE}
 
 # Ignoring NAs
 
@@ -166,7 +167,7 @@ daily_amd2 <- amd2 %>% group_by(date) %>% summarise(total_steps = sum(steps))
 
 **Plot a histogram of the total number of steps taken each day:**
 
-```{r, echo = TRUE}
+```{r, fig.path='figures/hist_total-steps-day-imputed-', dev='png', echo = TRUE}
 
 hist(daily_amd2$total_steps, col = "lightblue", main = "Histogram of total steps taken per day", xlab = "Sum of Steps")
 
@@ -204,7 +205,7 @@ tmp2 <- tmp1 %>% group_by(interval, weekend) %>% summarise(mean_steps = mean(ste
 
 Plot 5 min intervals vs. average number of steps for weekends and weekdays:
 
-```{r, echo = TRUE}
+```{r, fig.path='figures/line_avg-steps-weekday-vs-weekend-', dev='png', echo = TRUE}
 
 ggplot(tmp2, aes(interval, mean_steps)) + 
         geom_line() + facet_grid(~weekend) + 

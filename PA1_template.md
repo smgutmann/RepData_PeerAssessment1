@@ -104,7 +104,8 @@ daily_amd1 <- amd1 %>% group_by(date) %>% summarise(total_steps = sum(steps)) %>
 hist(daily_amd1$total_steps, col = "lightblue", main = "Histogram of total steps taken per day", xlab = "Sum of Steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](figures/hist_total-steps-day-unnamed-chunk-5-1.png)<!-- -->
+
 
 **Calculate and report the mean and median of the total number of steps taken per day**
 
@@ -137,7 +138,7 @@ ggplot(meanSteps, aes(x = interval, y = mean_steps)) +
         labs(x = "5 min intervals", y = "Average number of steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![](figures/line_avg-steps-interval-unnamed-chunk-7-1.png)<!-- -->
 
 
 **Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?**
@@ -239,7 +240,7 @@ daily_amd2 <- amd2 %>% group_by(date) %>% summarise(total_steps = sum(steps))
 hist(daily_amd2$total_steps, col = "lightblue", main = "Histogram of total steps taken per day", xlab = "Sum of Steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-15-1.png)<!-- -->
+![](figures/hist_total-steps-day-imputed-unnamed-chunk-15-1.png)<!-- -->
 
 **Calculate mean and median total number of steps taken per day:**
 
@@ -282,7 +283,7 @@ ggplot(tmp2, aes(interval, mean_steps)) +
         labs(x = "5 min intervals", y = "Average number of steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-19-1.png)<!-- -->
+![](figures/line_avg-steps-weekday-vs-weekend-unnamed-chunk-19-1.png)<!-- -->
 
 
 ```r
